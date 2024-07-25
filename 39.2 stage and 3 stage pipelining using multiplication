@@ -1,0 +1,22 @@
+#include <stdio.h>
+void twoStagePipelining(int num1, int num2) {
+    int stage1_result = num1 * num2; 
+    int stage2_result = stage1_result;
+    printf("2-stage pipelining result: %d\n", stage2_result);
+}
+void threeStagePipelining(int num1, int num2) {
+    int stage1_result = num1 * num2; 
+    int stage2_result = stage1_result;
+    int stage3_result = stage2_result; 
+    printf("3-stage pipelining result: %d\n", stage3_result);
+}
+int main() {
+    int number1, number2;
+    printf("Enter the first number: ");
+    scanf("%d", &number1);
+    printf("Enter the second number: ");
+    scanf("%d", &number2);
+    twoStagePipelining(number1, number2);
+    threeStagePipelining(number1, number2);
+    return 0;
+}
